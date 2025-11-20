@@ -149,6 +149,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ category, animals, onBack })
 
     if (selected.id === targetAnimal?.id) {
       setShowFeedback('correct');
+      speakArabic('صَحِيح');
       // Update Score for current team
       setTeams(prev => prev.map((t, i) => i === currentTeamIndex ? { ...t, score: t.score + 1 } : t));
       setTimeout(() => advanceTurn(), 1500);
@@ -410,9 +411,11 @@ export const QuizView: React.FC<QuizViewProps> = ({ category, animals, onBack })
       {/* Feedback Messages */}
       {showFeedback === 'correct' && (
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50 animate-bounce-in">
-           <div className={`bg-white ${currentTeam.textColor} px-10 py-6 rounded-full text-4xl font-extrabold shadow-2xl border-8 ${currentTeam.borderColor} flex flex-col items-center gap-2`}>
-             <Crown className="w-12 h-12 fill-current" />
-             <div>+1 Point!</div>
+           <div className={`bg-white ${currentTeam.textColor} px-10 py-6 rounded-full shadow-2xl border-8 ${currentTeam.borderColor} flex flex-col items-center gap-2 min-w-[300px]`}>
+             <Crown className="w-16 h-16 fill-current" />
+             <div className="text-5xl font-extrabold">Correct!</div>
+             <div className="text-3xl font-bold arabic-text">صَحِيح</div>
+             <div className="text-xl font-bold opacity-75 mt-1">+1 Point</div>
            </div>
         </div>
       )}
