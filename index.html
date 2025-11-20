@@ -4,25 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mazra'ati - Arabic Farm Animals</title>
+    
+    <!-- Fix Favicon 404 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚜</text></svg>">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Varela Round', 'sans-serif'],
+              arabic: ['Cairo', 'sans-serif'],
+            },
+            animation: {
+              'bounce-slight': 'bounce-slight 2s infinite',
+              'spin-slow': 'spin 3s linear infinite',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'scale-in': 'scaleIn 0.3s ease-out forwards',
+              'bounce-in': 'bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
+            },
+            keyframes: {
+              'bounce-slight': {
+                '0%, 100%': { transform: 'translateY(-5%)' },
+                '50%': { transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              scaleIn: {
+                '0%': { transform: 'scale(0)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              bounceIn: {
+                '0%': { transform: 'translate(-50%, -50%) scale(0)' },
+                '80%': { transform: 'translate(-50%, -50%) scale(1.1)' },
+                '100%': { transform: 'translate(-50%, -50%) scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
     <style>
-      body {
-        font-family: 'Varela Round', sans-serif;
-      }
-      .arabic-text {
-        font-family: 'Cairo', sans-serif;
-      }
-      .animate-bounce-slight {
-        animation: bounce-slight 2s infinite;
-      }
+      /* Utilities that rely on standard CSS behavior */
       .select-none {
         user-select: none;
         -webkit-user-select: none;
       }
-      @keyframes bounce-slight {
-        0%, 100% { transform: translateY(-5%); }
-        50% { transform: translateY(0); }
+      
+      /* Ensure font applies correctly to arabic text classes if not handled by tailwind utility */
+      .arabic-text {
+        font-family: 'Cairo', sans-serif;
       }
     </style>
   <script type="importmap">
