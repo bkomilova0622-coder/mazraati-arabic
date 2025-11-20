@@ -16,6 +16,10 @@
       .animate-bounce-slight {
         animation: bounce-slight 2s infinite;
       }
+      .select-none {
+        user-select: none;
+        -webkit-user-select: none;
+      }
       @keyframes bounce-slight {
         0%, 100% { transform: translateY(-5%); }
         50% { transform: translateY(0); }
@@ -27,13 +31,12 @@
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
   }
 }
 </script>
 </head>
-  <body class="bg-sky-100 text-slate-800">
+  <body class="bg-sky-100 text-slate-800 select-none">
     <div id="root"></div>
   </body>
 </html>

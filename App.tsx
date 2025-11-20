@@ -4,7 +4,6 @@ import { AnimalGroup, ViewState, CategoryInfo } from './types';
 import { CategoryCard } from './components/CategoryCard';
 import { LearnView } from './views/LearnView';
 import { QuizView } from './views/QuizView';
-import { initAudioContext } from './services/geminiService';
 import { Sprout, Star } from 'lucide-react';
 
 const MIXED_CATEGORY: CategoryInfo = {
@@ -20,7 +19,6 @@ const App: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<CategoryInfo | null>(null);
 
   const handleCategorySelect = (category: CategoryInfo) => {
-    initAudioContext(); // Initialize audio context on first interaction
     setSelectedCategory(category);
     
     // If it's the mixed category, go straight to quiz
