@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import { Animal } from '../types';
 import { Volume2, Loader2 } from 'lucide-react';
-import { speakArabic } from '../services/geminiService';
+import { speakArabic } from '../services/audioService';
 
 interface AnimalCardProps {
   animal: Animal;

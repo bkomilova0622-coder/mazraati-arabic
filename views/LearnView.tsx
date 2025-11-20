@@ -1,8 +1,9 @@
+
 import React, { useEffect } from 'react';
 import { Animal, CategoryInfo } from '../types';
 import { AnimalCard } from '../components/AnimalCard';
 import { ArrowLeft, Gamepad2 } from 'lucide-react';
-import { speakArabic } from '../services/geminiService';
+import { speakArabic } from '../services/audioService';
 
 interface LearnViewProps {
   category: CategoryInfo;

@@ -1,8 +1,9 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Animal, CategoryInfo } from '../types';
 import { AnimalCard } from '../components/AnimalCard';
 import { ArrowLeft, Volume2, RefreshCw, CheckCircle, XCircle, Clock, Trophy, Home } from 'lucide-react';
-import { speakArabic } from '../services/geminiService';
+import { speakArabic } from '../services/audioService';
 import { Confetti } from '../components/Confetti';
 
 interface QuizViewProps {
