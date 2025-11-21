@@ -374,7 +374,7 @@ export const QuizView: React.FC<QuizViewProps> = ({ category, animals, onBack })
         </div>
 
         {/* Options Grid */}
-        <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto w-full px-4 pb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto w-full px-4 pb-8">
           {options.map((animal) => (
             <div key={animal.id} className="relative group perspective-1000">
               <div className={`transition-transform duration-300 h-full ${showFeedback ? 'transform' : 'hover:-translate-y-2'}`}>
